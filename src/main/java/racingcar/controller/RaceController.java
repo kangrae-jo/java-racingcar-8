@@ -10,9 +10,9 @@ public class RaceController {
     private final Cars cars;
     private final Round round;
 
-    public RaceController(RandomNumber randomNumber, List<Car> cars, Round round) {
+    public RaceController(RandomNumber randomNumber, Cars cars, Round round) {
         this.randomNumber = randomNumber;
-        this.cars = new Cars(cars);
+        this.cars = cars;
         this.round = round;
     }
 
