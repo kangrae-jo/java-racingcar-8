@@ -21,7 +21,6 @@ class RandomNumberTest {
 
     @Test
     void 랜덤수가_임계값_미만이면_전진하지_않는다() {
-
         assertRandomNumberInRangeTest(() -> {
                     RandomNumber randomNumber = new RandomNumber();
                     assertThat(randomNumber.canMove(4)).isFalse();
