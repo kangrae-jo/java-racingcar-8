@@ -1,8 +1,10 @@
-package racingcar;
+package racingcar.controller;
 
 import java.util.List;
-import racingcar.car.Car;
-import racingcar.car.Cars;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.Cars;
+import racingcar.domain.number.RandomNumber;
+import racingcar.domain.round.Round;
 
 public class RaceController {
 

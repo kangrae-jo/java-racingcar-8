@@ -6,6 +6,7 @@ import static racingcar.ApplicationTest.MOVING_FORWARD;
 import static racingcar.ApplicationTest.STOP;
 
 import org.junit.jupiter.api.Test;
+import racingcar.domain.number.RandomNumber;
 
 class RandomNumberTest {
 
