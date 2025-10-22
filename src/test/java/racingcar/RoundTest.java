@@ -13,7 +13,7 @@ class RoundTest {
         Round round = new Round(TOTAL_ROUND);
 
         int times = 0;
-        while (round.canProceed()) {
+        while (round.canNext()) {
             round.proceed();
             times++;
         }
