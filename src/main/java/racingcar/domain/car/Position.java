@@ -12,6 +12,10 @@ public class Position {
         return this.position += step;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
     @Override
     public String toString() {
         return "-".repeat(position);

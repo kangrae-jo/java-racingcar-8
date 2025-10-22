@@ -22,7 +22,10 @@ public class RaceController {
             cars.printAll();
             round.proceed();
         }
-        // TODO: winners를 리턴하는 방식 고려
+    }
+
+    public void endRace() {
+        cars.printWinners();
     }
 
 }

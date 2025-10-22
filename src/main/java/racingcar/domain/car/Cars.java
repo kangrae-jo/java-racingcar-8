@@ -2,6 +2,7 @@ package racingcar.domain.car;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import racingcar.domain.number.RandomNumber;
 
 public class Cars {
@@ -24,6 +25,20 @@ public class Cars {
     public void printAll() {
         cars.forEach(car -> System.out.println(car.toString()));
         System.out.println();
+    }
+
+    public void printWinners() {
+        int maxPosition = cars.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .orElse(0);
+
+        String winners = cars.stream()
+                .filter(car -> car.getPosition() == maxPosition)
+                .map(Car::getName)
+                .collect(Collectors.joining(", "));
+
+        System.out.println("최종 우승자 : " + winners);
     }
 
 }
