@@ -1,7 +1,5 @@
 package racingcar.controller;
 
-import java.util.List;
-import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
 import racingcar.domain.number.RandomNumber;
 import racingcar.domain.round.Round;
@@ -21,6 +19,7 @@ public class RaceController {
     public void startRace() {
         while (round.canNext()) {
             cars.moveAll(randomNumber);
+            cars.printAll();
             round.proceed();
         }
         // TODO: winners를 리턴하는 방식 고려
