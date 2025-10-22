@@ -1,7 +1,25 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Console;
+import racingcar.controller.RaceController;
+import racingcar.domain.car.Cars;
+import racingcar.domain.number.RandomNumber;
+import racingcar.domain.round.Round;
+import racingcar.view.InputView;
+
 public class Application {
+
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        String names = InputView.readLine();
+        Cars cars = new Cars(names);
+
+        String totalRound = InputView.readLine();
+        Round round = new Round(totalRound);
+        Console.close();
+
+        RaceController controller = new RaceController(new RandomNumber(), cars, round);
+        controller.startRace();
+        controller.endRace();
     }
+
 }
