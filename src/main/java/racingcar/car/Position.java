@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.car;
 
 public class Position {
 
@@ -11,5 +11,5 @@ public class Position {
     public int move(int step) {
         return this.position += step;
     }
-    
+
 }
