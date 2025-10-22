@@ -11,7 +11,7 @@ class PositionTest {
 
     @Test
     void 위치는_step만큼_움직인다() {
-        Position position = new Position();
+        Position position = new Position(0);
 
         int prev = 0;
         int next = position.move(STEP);
