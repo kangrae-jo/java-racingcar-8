@@ -1,5 +1,7 @@
 package racingcar.car;
 
+import racingcar.RandomNumber;
+
 public class Car {
 
     private final Name name;
@@ -7,7 +9,14 @@ public class Car {
 
     public Car(String name) {
         this.name = new Name(name);
-        this.position = new Position();
+        this.position = new Position(0);
     }
+
+    public void attemptToMove(RandomNumber randomNumber) {
+        if (randomNumber.canMove(4)) {
+            position.move(1);
+        }
+    }
+
 
 }
