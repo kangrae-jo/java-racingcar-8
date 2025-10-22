@@ -7,7 +7,7 @@ import racingcar.domain.round.Round;
 
 class RoundTest {
 
-    private static final int TOTAL_ROUND = 10;
+    private static final String TOTAL_ROUND = "10";
 
     @Test
     void 시도할_횟수_만큼만_라운드를_반복한다() {
@@ -19,7 +19,7 @@ class RoundTest {
             times++;
         }
 
-        assertThat(times).isEqualTo(TOTAL_ROUND);
+        assertThat(times).isEqualTo(Integer.parseInt(TOTAL_ROUND));
     }
 
 }
