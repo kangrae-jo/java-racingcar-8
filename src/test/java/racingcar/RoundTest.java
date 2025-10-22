@@ -1,0 +1,24 @@
+package racingcar;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
+
+class RoundTest {
+
+    private static final int TOTAL_ROUND = 10;
+
+    @Test
+    void 시도할_횟수_만큼만_라운드를_반복한다() {
+        Round round = new Round(TOTAL_ROUND);
+
+        int times = 0;
+        while (round.canProceed()) {
+            round.proceed();
+            times++;
+        }
+
+        assertThat(times).isEqualTo(TOTAL_ROUND);
+    }
+
+}
