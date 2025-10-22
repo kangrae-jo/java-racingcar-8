@@ -8,10 +8,6 @@ public class Cars {
 
     private final List<Car> cars;
 
-    public Cars(List<Car> cars) {
-        this.cars = cars;
-    }
-
     public Cars(String names) {
         this.cars = Arrays.stream(names.split(","))
                 .map(Car::new)
