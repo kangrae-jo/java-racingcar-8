@@ -2,8 +2,8 @@ package racingcar.domain.number;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static org.assertj.core.api.Assertions.assertThat;
-import static racingcar.ApplicationTest.MOVING_FORWARD;
-import static racingcar.ApplicationTest.STOP;
+import static racingcar.TestConstant.MOVING_FORWARD;
+import static racingcar.TestConstant.STOP;
 
 import org.junit.jupiter.api.Test;
 

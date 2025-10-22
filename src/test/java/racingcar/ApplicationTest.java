@@ -4,14 +4,13 @@ import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberI
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static racingcar.TestConstant.MOVING_FORWARD;
+import static racingcar.TestConstant.STOP;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
 
 class ApplicationTest extends NsTest {
-
-    public static final int MOVING_FORWARD = 4;
-    public static final int STOP = 3;
 
     @Test
     void 기능_테스트() {
