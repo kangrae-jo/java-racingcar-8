@@ -2,7 +2,7 @@ package racingcar.car;
 
 public class Name {
 
-    private static final int NAME_LENGTH_LIMIT = 5;
+    private static final int LENGTH_LIMIT = 5;
     private final String name;
 
     public Name(String name) {
@@ -12,7 +12,7 @@ public class Name {
     }
 
     private void validateName(String name) {
-        if (name.isEmpty() || name.length() > NAME_LENGTH_LIMIT) {
+        if (name.isEmpty() || name.length() > LENGTH_LIMIT) {
             throw new IllegalArgumentException("[ERROR] 자동차 이름은 1자 이상 5자 이하입니다.");
         }
     }
