@@ -11,8 +11,10 @@ class RandomNumberTest {
 
     @Test
     void 랜덤수가_임계값_이상이면_전진한다() {
+        RandomNumber randomNumber = new RandomNumber();
+
         assertRandomNumberInRangeTest(() -> {
-                    RandomNumber randomNumber = new RandomNumber();
+                    randomNumber.refresh();
                     assertThat(randomNumber.canMove(4)).isTrue();
                 }, MOVING_FORWARD
         );
@@ -20,8 +22,10 @@ class RandomNumberTest {
 
     @Test
     void 랜덤수가_임계값_미만이면_전진하지_않는다() {
+        RandomNumber randomNumber = new RandomNumber();
+
         assertRandomNumberInRangeTest(() -> {
-                    RandomNumber randomNumber = new RandomNumber();
+                    randomNumber.refresh();
                     assertThat(randomNumber.canMove(4)).isFalse();
                 }, STOP
         );

@@ -10,7 +10,7 @@ public class RandomNumber {
     private int number;
 
     public RandomNumber() {
-        this.refresh();
+        this.number = 0;
     }
 
     public void refresh() {
