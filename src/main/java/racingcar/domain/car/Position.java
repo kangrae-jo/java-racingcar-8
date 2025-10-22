@@ -12,4 +12,9 @@ public class Position {
         return this.position += step;
     }
 
+    @Override
+    public String toString() {
+        return "-".repeat(position);
+    }
+
 }

@@ -25,4 +25,9 @@ public class Cars {
         });
     }
 
+    public void printAll() {
+        cars.forEach(car -> System.out.println(car.toString()));
+        System.out.println();
+    }
+
 }
