@@ -9,13 +9,15 @@ import org.junit.jupiter.api.Test;
 
 class RandomNumberTest {
 
+    private final static int THRESHOLD = 4;
+
     @Test
     void 랜덤수가_임계값_이상이면_전진한다() {
         RandomNumber randomNumber = new RandomNumber();
 
         assertRandomNumberInRangeTest(() -> {
                     randomNumber.refresh();
-                    assertThat(randomNumber.canMove(4)).isTrue();
+                    assertThat(randomNumber.canMove(THRESHOLD)).isTrue();
                 }, MOVING_FORWARD
         );
     }
@@ -26,7 +28,7 @@ class RandomNumberTest {
 
         assertRandomNumberInRangeTest(() -> {
                     randomNumber.refresh();
-                    assertThat(randomNumber.canMove(4)).isFalse();
+                    assertThat(randomNumber.canMove(THRESHOLD)).isFalse();
                 }, STOP
         );
     }
@@ -37,12 +39,12 @@ class RandomNumberTest {
 
         assertRandomNumberInRangeTest(() -> {
                     randomNumber.refresh();
-                    assertThat(randomNumber.canMove(4)).isTrue();
+                    assertThat(randomNumber.canMove(THRESHOLD)).isTrue();
                 }, MOVING_FORWARD
         );
         assertRandomNumberInRangeTest(() -> {
                     randomNumber.refresh();
-                    assertThat(randomNumber.canMove(4)).isFalse();
+                    assertThat(randomNumber.canMove(THRESHOLD)).isFalse();
                 }, STOP
         );
     }
