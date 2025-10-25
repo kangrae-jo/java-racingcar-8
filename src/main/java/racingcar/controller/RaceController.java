@@ -18,14 +18,12 @@ public class RaceController {
     }
 
     public void startRace() {
-        StringBuilder raceResult = new StringBuilder();
+        OutputView.printCarsPositionPrompt();
         while (round.canNext()) {
             cars.moveAll(randomNumber);
-            raceResult.append(cars.printAll());
+            OutputView.printCarsPosition(cars.printAll());
             round.proceed();
         }
-
-        OutputView.printCarsPosition(raceResult.toString());
     }
 
     public void endRace() {

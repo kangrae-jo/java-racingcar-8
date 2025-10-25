@@ -22,10 +22,10 @@ public class Cars {
         });
     }
 
-    public String printAll() {
+    public List<CarDto> printAll() {
         return cars.stream()
-                .map(Car::toString)
-                .collect(Collectors.joining("\n", "", "\n\n"));
+                .map(CarDto::from)
+                .collect(Collectors.toList());
     }
 
     public String printWinners() {

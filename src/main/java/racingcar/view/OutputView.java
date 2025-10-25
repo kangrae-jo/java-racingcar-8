@@ -1,5 +1,8 @@
 package racingcar.view;
 
+import java.util.List;
+import racingcar.domain.car.CarDto;
+
 public class OutputView {
 
     public static void printCarNamePrompt() {
@@ -10,9 +13,15 @@ public class OutputView {
         System.out.println("시도할 횟수는 몇 회인가요?");
     }
 
-    public static void printCarsPosition(String carsPosition) {
-        System.out.println("\n실행 결과");
-        System.out.print(carsPosition);
+    public static void printCarsPositionPrompt() {
+        System.out.println("\n실행결과");
+    }
+
+    public static void printCarsPosition(List<CarDto> cars) {
+        cars.forEach(car ->
+                System.out.println(car.name() + " : " + "-".repeat(car.position()))
+        );
+        System.out.println();
     }
 
     public static void printWinners(String winners) {
