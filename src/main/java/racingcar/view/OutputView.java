@@ -10,4 +10,9 @@ public class OutputView {
         System.out.println("시도할 횟수는 몇 회인가요?");
     }
 
+    public static void printCarsPosition(String carsPosition) {
+        System.out.println("\n실행 결과");
+        System.out.println(carsPosition);
+    }
+
 }

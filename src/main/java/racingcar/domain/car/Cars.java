@@ -22,9 +22,10 @@ public class Cars {
         });
     }
 
-    public void printAll() {
-        cars.forEach(car -> System.out.println(car.toString()));
-        System.out.println();
+    public String printAll() {
+        return cars.stream()
+                .map(Car::toString)
+                .collect(Collectors.joining("\n", "", "\n\n"));
     }
 
     public void printWinners() {

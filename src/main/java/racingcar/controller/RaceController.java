@@ -3,6 +3,7 @@ package racingcar.controller;
 import racingcar.domain.car.Cars;
 import racingcar.domain.number.RandomNumber;
 import racingcar.domain.round.Round;
+import racingcar.view.OutputView;
 
 public class RaceController {
 
@@ -17,11 +18,14 @@ public class RaceController {
     }
 
     public void startRace() {
+        StringBuilder raceResult = new StringBuilder();
         while (round.canNext()) {
             cars.moveAll(randomNumber);
-            cars.printAll();
+            raceResult.append(cars.printAll());
             round.proceed();
         }
+
+        OutputView.printCarsPosition(raceResult.toString());
     }
 
     public void endRace() {
