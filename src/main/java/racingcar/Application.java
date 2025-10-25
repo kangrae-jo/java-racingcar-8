@@ -10,10 +10,10 @@ import racingcar.view.InputView;
 public class Application {
 
     public static void main(String[] args) {
-        String names = InputView.readLine();
+        String names = InputView.readCarNames();
         Cars cars = new Cars(names);
 
-        String totalRound = InputView.readLine();
+        String totalRound = InputView.readTotalRound();
         Round round = new Round(totalRound);
         Console.close();
 
