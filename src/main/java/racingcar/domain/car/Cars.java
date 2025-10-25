@@ -28,7 +28,7 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
-    public String printWinners() {
+    public List<WinnerDto> printWinners() {
         int maxPosition = cars.stream()
                 .mapToInt(Car::getPosition)
                 .max()
@@ -36,8 +36,8 @@ public class Cars {
 
         return cars.stream()
                 .filter(car -> car.getPosition() == maxPosition)
-                .map(Car::getName)
-                .collect(Collectors.joining(", "));
+                .map(WinnerDto::from)
+                .collect(Collectors.toList());
     }
 
 }
