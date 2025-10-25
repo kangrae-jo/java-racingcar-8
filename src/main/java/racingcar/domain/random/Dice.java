@@ -1,19 +1,19 @@
-package racingcar.domain.number;
+package racingcar.domain.random;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-public class RandomNumber {
+public class Dice {
 
     private final static int START_INCLUSIVE = 0;
     private final static int END_INCLUSIVE = 9;
 
     private int number;
 
-    public RandomNumber() {
+    public Dice() {
         this.number = 0;
     }
 
-    public void refresh() {
+    public void reroll() {
         this.number = Randoms.pickNumberInRange(START_INCLUSIVE, END_INCLUSIVE);
     }
 

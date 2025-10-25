@@ -3,7 +3,7 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.controller.RaceController;
 import racingcar.domain.car.Cars;
-import racingcar.domain.number.RandomNumber;
+import racingcar.domain.random.Dice;
 import racingcar.domain.round.Round;
 import racingcar.view.InputView;
 
@@ -17,7 +17,7 @@ public class Application {
         Round round = new Round(totalRound);
         Console.close();
 
-        RaceController controller = new RaceController(new RandomNumber(), cars, round);
+        RaceController controller = new RaceController(new Dice(), cars, round);
         controller.startRace();
         controller.endRace();
     }

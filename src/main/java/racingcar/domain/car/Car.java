@@ -1,6 +1,6 @@
 package racingcar.domain.car;
 
-import racingcar.domain.number.RandomNumber;
+import racingcar.domain.random.Dice;
 
 public class Car {
 
@@ -16,8 +16,8 @@ public class Car {
         this.position = new Position(INIT_POSITION);
     }
 
-    public void attemptToMove(RandomNumber randomNumber) {
-        if (randomNumber.canMove(THRESHOLD)) {
+    public void attemptToMove(Dice dice) {
+        if (dice.canMove(THRESHOLD)) {
             position.move(MOVE_AMOUNT);
         }
     }

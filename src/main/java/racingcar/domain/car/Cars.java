@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import racingcar.domain.car.dto.CarDto;
 import racingcar.domain.car.dto.WinnerDto;
-import racingcar.domain.number.RandomNumber;
+import racingcar.domain.random.Dice;
 
 public class Cars {
 
@@ -17,10 +17,10 @@ public class Cars {
                 .toList();
     }
 
-    public void moveAll(RandomNumber randomNumber) {
+    public void moveAll(Dice dice) {
         cars.forEach(car -> {
-            randomNumber.refresh();
-            car.attemptToMove(randomNumber);
+            dice.reroll();
+            car.attemptToMove(dice);
         });
     }
 
