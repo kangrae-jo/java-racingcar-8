@@ -3,6 +3,8 @@ package racingcar.domain.car;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import racingcar.domain.car.dto.CarDto;
+import racingcar.domain.car.dto.WinnerDto;
 import racingcar.domain.number.RandomNumber;
 
 public class Cars {

@@ -2,8 +2,8 @@ package racingcar.view;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import racingcar.domain.car.CarDto;
-import racingcar.domain.car.WinnerDto;
+import racingcar.domain.car.dto.CarDto;
+import racingcar.domain.car.dto.WinnerDto;
 
 public class OutputView {
 
