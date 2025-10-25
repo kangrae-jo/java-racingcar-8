@@ -12,7 +12,12 @@ public class OutputView {
 
     public static void printCarsPosition(String carsPosition) {
         System.out.println("\n실행 결과");
-        System.out.println(carsPosition);
+        System.out.print(carsPosition);
+    }
+
+    public static void printWinners(String winners) {
+        System.out.print("최종 우승자 : ");
+        System.out.println(winners);
     }
 
 }

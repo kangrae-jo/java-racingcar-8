@@ -29,7 +29,7 @@ public class RaceController {
     }
 
     public void endRace() {
-        cars.printWinners();
+        OutputView.printWinners(cars.printWinners());
     }
 
 }

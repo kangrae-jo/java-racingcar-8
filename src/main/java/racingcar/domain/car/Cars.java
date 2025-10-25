@@ -28,18 +28,16 @@ public class Cars {
                 .collect(Collectors.joining("\n", "", "\n\n"));
     }
 
-    public void printWinners() {
+    public String printWinners() {
         int maxPosition = cars.stream()
                 .mapToInt(Car::getPosition)
                 .max()
                 .orElse(0);
 
-        String winners = cars.stream()
+        return cars.stream()
                 .filter(car -> car.getPosition() == maxPosition)
                 .map(Car::getName)
                 .collect(Collectors.joining(", "));
-
-        System.out.println("최종 우승자 : " + winners);
     }
 
 }
