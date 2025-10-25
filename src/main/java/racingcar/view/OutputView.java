@@ -19,15 +19,15 @@ public class OutputView {
         System.out.println("\n실행결과");
     }
 
-    public static void printCarsPosition(List<CarDto> cars) {
-        cars.forEach(car ->
-                System.out.println(car.name() + " : " + "-".repeat(car.position()))
+    public static void printCarsPosition(List<CarDto> carDtos) {
+        carDtos.forEach(carDto ->
+                System.out.println(carDto.name() + " : " + "-".repeat(carDto.position()))
         );
         System.out.println();
     }
 
-    public static void printWinners(List<WinnerDto> winners) {
-        String winnerNames = winners.stream()
+    public static void printWinners(List<WinnerDto> winnerDtos) {
+        String winnerNames = winnerDtos.stream()
                 .map(WinnerDto::name)
                 .collect(Collectors.joining(", "));
 

@@ -1,8 +1,6 @@
 package racingcar.controller;
 
-import java.util.List;
 import racingcar.domain.car.Cars;
-import racingcar.domain.car.dto.WinnerDto;
 import racingcar.domain.number.RandomNumber;
 import racingcar.domain.round.Round;
 import racingcar.view.OutputView;
@@ -23,14 +21,13 @@ public class RaceController {
         OutputView.printCarsPositionPrompt();
         while (round.canNext()) {
             cars.moveAll(randomNumber);
-            OutputView.printCarsPosition(cars.printAll());
+            OutputView.printCarsPosition(cars.toCarDtos());
             round.proceed();
         }
     }
 
     public void endRace() {
-        List<WinnerDto> winners = cars.printWinners();
-        OutputView.printWinners(winners);
+        OutputView.printWinners(cars.toWinnerDtos());
     }
 
 }

@@ -24,13 +24,13 @@ public class Cars {
         });
     }
 
-    public List<CarDto> printAll() {
+    public List<CarDto> toCarDtos() {
         return cars.stream()
                 .map(CarDto::from)
                 .collect(Collectors.toList());
     }
 
-    public List<WinnerDto> printWinners() {
+    public List<WinnerDto> toWinnerDtos() {
         int maxPosition = cars.stream()
                 .mapToInt(Car::getPosition)
                 .max()
