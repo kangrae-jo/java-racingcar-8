@@ -33,9 +33,7 @@ public class OutputView {
         String winnerNames = winnerDtos.stream()
                 .map(WinnerDto::name)
                 .collect(Collectors.joining(", "));
-
         System.out.println("최종 우승자 : " + winnerNames);
-
     }
 
 }
