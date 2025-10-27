@@ -22,4 +22,11 @@ class CarsTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"pobi,pobi,woni", "pobi,,pobi , pobi"})
+    void 자동차_이름은_중복이_없어야한다(String names) {
+        assertThatThrownBy(() -> new Cars(names))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
 }

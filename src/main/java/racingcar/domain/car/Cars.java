@@ -1,7 +1,9 @@
 package racingcar.domain.car;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import racingcar.domain.car.dto.CarDto;
 import racingcar.domain.car.dto.WinnerDto;
@@ -12,7 +14,10 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(String names) {
-        this.cars = Arrays.stream(names.split(","))
+        String[] splitNames = names.split(",");
+
+        validateUniqueNames(splitNames);
+        this.cars = Arrays.stream(splitNames)
                 .map(Car::new)
                 .toList();
     }
@@ -40,6 +45,14 @@ public class Cars {
                 .filter(car -> car.getPosition() == maxPosition)
                 .map(WinnerDto::from)
                 .collect(Collectors.toList());
+    }
+
+    private void validateUniqueNames(String[] splitNames) {
+        Set<String> uniqueNames = new HashSet<>(Arrays.asList(splitNames));
+
+        if (uniqueNames.size() != splitNames.length) {
+            throw new IllegalArgumentException("[ERROR] 자동차 이름은 중복될 수 없습니다.");
+        }
     }
 
 }
