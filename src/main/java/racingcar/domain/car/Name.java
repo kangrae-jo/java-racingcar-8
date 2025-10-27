@@ -7,7 +7,7 @@ public class Name {
 
     public Name(String name) {
         name = name.trim();
-        validateName(name);
+        validateNameLength(name);
         this.name = name;
     }
 
@@ -15,9 +15,9 @@ public class Name {
         return name;
     }
 
-    private void validateName(String name) {
+    private void validateNameLength(String name) {
         if (name.isEmpty() || name.length() > LENGTH_LIMIT) {
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 1자 이상 5자 이하입니다.");
+            throw new IllegalArgumentException(String.format("[ERROR] 자동차 이름은 1자 이상 %d자 이하입니다.", LENGTH_LIMIT));
         }
     }
 
